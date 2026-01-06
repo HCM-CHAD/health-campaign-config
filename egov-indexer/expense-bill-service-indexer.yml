@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: expense-bill-service
   version: 1.0.0
   mappings:
-  - topic: chad-transformer-save-expense-bill
+  - topic: transformer-save-expense-bill
     configKey: INDEX
     indexes:
-    - name: chad-expense-bill-index-v1
+    - name: expense-bill-index-v1
       type: bill
       id: $.bill.id,$.bill.tenantId
       jsonPath: $

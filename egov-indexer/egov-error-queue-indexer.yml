@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: Tracer
   version: 1.0.0
   mappings:
-  - topic: chad-error-details-indexer-topic
+  - topic: error-details-indexer-topic
     configKey: INDEX
     indexes:
-    - name: chad-egov-tracer-error-details
+    - name: egov-tracer-error-details
       type: general
       id: $.uuid
       isBulk: true

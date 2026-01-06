@@ -2,28 +2,28 @@ ServiceMaps:
   serviceName: individual
   version: 1.0.0
   mappings:
-  - topic: chad-save-individual-topic
+  - topic: save-individual-topic
     configKey: INDEX
     indexes:
-    - name: chad-individual-index-v1
+    - name: individual-index-v1
       type: individual
       id: $.clientReferenceId
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.createdTime
-  - topic: chad-update-individual-topic
+  - topic: update-individual-topic
     configKey: INDEX
     indexes:
-    - name: chad-individual-index-v1
+    - name: individual-index-v1
       type: individual
       id: $.clientReferenceId
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.lastModifiedTime
-  - topic: chad-delete-individual-topic
+  - topic: delete-individual-topic
     configKey: INDEX
     indexes:
-    - name: chad-individual-index-v1
+    - name: individual-index-v1
       type: individual
       id: $.clientReferenceId
       isBulk: true

@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: service-request
   version: 1.0.0
   mappings:
-  - topic: chad-transformer-producer-service-request-index-v1-topic
+  - topic: transformer-producer-service-request-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: chad-service-task-v1
+    - name: service-task-v1
       type: service
       id: $.clientReferenceId,$.tenantId
       isBulk: true
@@ -17,7 +17,7 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-    - name: chad-user-sync-index-v1
+    - name: user-sync-index-v1
       type: users
       id: $.id
       isBulk: true
@@ -49,10 +49,10 @@ ServiceMaps:
         - inJsonPath: $.additionalDetails
           outJsonPath: $.Data.additionalDetails
       timeStampField: $.createdTime
-  - topic: chad-transformer-producer-hfreferral-fever-index-topic
+  - topic: transformer-producer-hfreferral-fever-index-topic
     configKey: INDEX
     indexes:
-    - name: chad-hf-referral-fever-index
+    - name: hf-referral-fever-index
       type: service
       id: $.id
       isBulk: true
@@ -64,10 +64,10 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-  - topic: chad-transformer-producer-hfreferral-drug-reactiod-index-topic
+  - topic: transformer-producer-hfreferral-drug-reactiod-index-topic
     configKey: INDEX
     indexes:
-    - name: chad-hf-referral-drug-reactiod-index
+    - name: hf-referral-drug-reactiod-index
       type: service
       id: $.id
       isBulk: true
@@ -79,10 +79,10 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-  - topic: chad-transformer-producer-extra-transformed-checklist-index-topic
+  - topic: transformer-producer-extra-transformed-checklist-index-topic
     configKey: INDEX
     indexes:
-    - name: chad-transformed-checklist-index-v1
+    - name: transformed-checklist-index-v1
       type: service
       id: $.id,$.tenantId
       isBulk: true

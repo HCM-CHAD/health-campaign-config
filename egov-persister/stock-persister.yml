@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
   - version: 1.0
     description: Saves a stock
-    fromTopic: chad-save-stock-topic
+    fromTopic: save-stock-topic
     isTransaction: true
     isAuditEnabled: true
     module: STOCK
@@ -13,7 +13,7 @@ serviceMaps:
     transactionCodeJsonPath: $.clientReferenceId
     auditAttributeBasePath: $.*
     queryMaps:
-    - query: INSERT INTO chad.STOCK(id, clientReferenceId, tenantId, productVariantId,
+    - query: INSERT INTO STOCK(id, clientReferenceId, tenantId, productVariantId,
         wayBillNumber, quantity, referenceId, referenceIdType, transactionType, transactionReason,
         senderType, senderId, receiverType, receiverId, additionalDetails, createdBy,
         createdTime, lastModifiedBy, lastModifiedTime, rowVersion, isDeleted, dateOfEntry,
@@ -51,7 +51,7 @@ serviceMaps:
       - jsonPath: $.*.clientAuditDetails.lastModifiedBy
   - version: 1.0
     description: Updates a stock
-    fromTopic: chad-update-stock-topic
+    fromTopic: update-stock-topic
     isTransaction: true
     isAuditEnabled: true
     module: STOCK
@@ -61,7 +61,7 @@ serviceMaps:
     transactionCodeJsonPath: $.clientReferenceId
     auditAttributeBasePath: $.*
     queryMaps:
-    - query: UPDATE chad.STOCK SET tenantId=?, dateOfEntry = ?, productVariantId=?,
+    - query: UPDATE STOCK SET tenantId=?, dateOfEntry = ?, productVariantId=?,
         wayBillNumber=?, quantity=?, referenceId=?, referenceIdType=?, transactionType=?,
         transactionReason=?, senderType=?, senderId=?, receiverType=?, receiverId=?,
         additionalDetails=?, lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, clientLastModifiedTime
@@ -92,7 +92,7 @@ serviceMaps:
       - jsonPath: $.*.id
   - version: 1.0
     description: Deletes a stock
-    fromTopic: chad-delete-stock-topic
+    fromTopic: delete-stock-topic
     isTransaction: true
     isAuditEnabled: true
     module: STOCK
@@ -102,7 +102,7 @@ serviceMaps:
     transactionCodeJsonPath: $.clientReferenceId
     auditAttributeBasePath: $.*
     queryMaps:
-    - query: UPDATE chad.STOCK SET lastModifiedBy=?, lastModifiedTime=?, clientLastModifiedTime
+    - query: UPDATE STOCK SET lastModifiedBy=?, lastModifiedTime=?, clientLastModifiedTime
         = ?, clientLastModifiedBy = ?, rowVersion=?, isDeleted=?, additionalDetails=?
         WHERE id=?;
       basePath: $.*
@@ -119,7 +119,7 @@ serviceMaps:
       - jsonPath: $.*.id
   - version: 1.0
     description: Saves a stock reconciliation
-    fromTopic: chad-save-stock-reconciliation-topic
+    fromTopic: save-stock-reconciliation-topic
     isTransaction: true
     isAuditEnabled: true
     module: STOCK
@@ -129,7 +129,7 @@ serviceMaps:
     transactionCodeJsonPath: $.clientReferenceId
     auditAttributeBasePath: $.*
     queryMaps:
-    - query: INSERT INTO chad.STOCK_RECONCILIATION_LOG(id, clientReferenceId, tenantId,
+    - query: INSERT INTO STOCK_RECONCILIATION_LOG(id, clientReferenceId, tenantId,
         facilityId, dateOfReconciliation, calculatedCount, physicalRecordedCount,
         commentsOnReconciliation, productVariantId, referenceId, referenceIdType,
         additionalDetails, createdBy, createdTime, lastModifiedBy, lastModifiedTime,
@@ -163,7 +163,7 @@ serviceMaps:
       - jsonPath: $.*.clientAuditDetails.lastModifiedBy
   - version: 1.0
     description: Updates a stock reconciliation
-    fromTopic: chad-update-stock-reconciliation-topic
+    fromTopic: update-stock-reconciliation-topic
     isTransaction: true
     isAuditEnabled: true
     module: STOCK
@@ -173,7 +173,7 @@ serviceMaps:
     transactionCodeJsonPath: $.clientReferenceId
     auditAttributeBasePath: $.*
     queryMaps:
-    - query: UPDATE chad.STOCK_RECONCILIATION_LOG SET tenantId=?, facilityId=?, productVariantId=?,
+    - query: UPDATE STOCK_RECONCILIATION_LOG SET tenantId=?, facilityId=?, productVariantId=?,
         referenceId=?, referenceIdType=?, dateOfReconciliation=?, calculatedCount=?,
         physicalRecordedCount=?, commentsOnReconciliation=?, additionalDetails=?,
         lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, clientLastModifiedTime
@@ -200,7 +200,7 @@ serviceMaps:
       - jsonPath: $.*.id
   - version: 1.0
     description: Deletes a stock reconciliation
-    fromTopic: chad-delete-stock-reconciliation-topic
+    fromTopic: delete-stock-reconciliation-topic
     isTransaction: true
     isAuditEnabled: true
     module: STOCK
@@ -210,7 +210,7 @@ serviceMaps:
     transactionCodeJsonPath: $.clientReferenceId
     auditAttributeBasePath: $.*
     queryMaps:
-    - query: UPDATE chad.STOCK_RECONCILIATION_LOG SET lastModifiedBy=?, lastModifiedTime=?,
+    - query: UPDATE STOCK_RECONCILIATION_LOG SET lastModifiedBy=?, lastModifiedTime=?,
         clientLastModifiedTime = ?, clientLastModifiedBy = ?, rowVersion=?, isDeleted=?,
         additionalDetails=? WHERE id=?;
       basePath: $.*
