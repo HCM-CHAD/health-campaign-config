@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: project
   version: 1.0.0
   mappings:
-  - topic: chad-transformer-producer-bulk-project-staff-index-v1-topic
+  - topic: transformer-producer-bulk-project-staff-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: chad-project-staff-index-v1
+    - name: project-staff-index-v1
       type: staff
       id: $.id
       isBulk: true

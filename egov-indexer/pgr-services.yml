@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: Public Grievance Redressal - rainmaker
   version: 1.0.0
   mappings:
-  - topic: chad-save-pgr-request
+  - topic: save-pgr-request
     configKey: INDEX
     indexes:
-    - name: chad-pgr-services
+    - name: pgr-services
       type: general
       id: $.service.serviceRequestId
       jsonPath: $
@@ -216,10 +216,10 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.MdmsRes.tenant.tenants
             outJsonPath: $.Data.tenantData
-  - topic: chad-update-pgr-request
+  - topic: update-pgr-request
     configKey: INDEX
     indexes:
-    - name: chad-pgr-services
+    - name: pgr-services
       type: general
       id: $.service.serviceRequestId
       jsonPath: $
@@ -416,10 +416,10 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.MdmsRes.RAINMAKER-PGR.ServiceDefs.*.slaHours
             outJsonPath: $.Data.slaHours
-  - topic: chad-pgr-services-legacyIndex
+  - topic: pgr-services-legacyIndex
     configKey: LEGACYINDEX
     indexes:
-    - name: chad-pgr-services
+    - name: pgr-services
       type: general
       isBulk: true
       id: $.service.serviceRequestId
@@ -604,10 +604,10 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.MdmsRes.tenant.tenants
             outJsonPath: $.Data.tenantData
-  - topic: chad-pgr-service-reindex
+  - topic: pgr-service-reindex
     configKey: REINDEX
     indexes:
-    - name: chad-pgrreindex-v2
+    - name: pgrreindex-v2
       type: general
       id: $.Data.service.serviceRequestId
       isBulk: true
