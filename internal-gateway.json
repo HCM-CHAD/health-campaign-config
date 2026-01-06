@@ -1,0 +1,18 @@
+{
+  "/localization/.*": {
+    "ba": "http://egov-localization.ba:8080",
+    "oy": "http://egov-localization.oy:8080"
+  },
+  "/boundary-service/.*": {
+    "ba": "http://boundary-service.ba:8080",
+    "oy": "http://boundary-service.oy:8080"
+  },
+  "/egov-idgen/.*": {
+    "ba": "http://egov-idgen.ba:8080",
+    "oy": "http://egov-idgen.oy:8080"
+  },
+  "/egov-enc-service/.*": {
+    "ba": "http://egov-enc-service.ba:8080",
+    "oy": "http://egov-enc-service.oy:8080"
+  }
+}
